@@ -118,6 +118,7 @@ DROP TABLE IF EXISTS roles;
 
 -- Create new tables, according to your domain model
 -- TODO!
+
 CREATE TABLE studios (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     studio_name TEXT
@@ -128,12 +129,136 @@ CREATE TABLE movies (
     studio_id INTEGER,
     title TEXT,
     year TEXT,
-    rating TEXT,
-)
+    rating TEXT
+);
+
+CREATE TABLE roles (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    movie_id INTEGER,
+    actor_name TEXT,
+    character_name TEXT
+);
 
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
+
+INSERT INTO studios (
+    studio_name
+)
+VALUES (
+    "Warner Bros."
+);
+
+INSERT INTO movies (
+    studio_id,
+    title,
+    year,
+    rating
+)
+VALUES (
+    1,
+    "Batman Begins",
+    "2005",
+    "PG-13"
+);
+
+INSERT INTO movies (
+    studio_id,
+    title,
+    year,
+    rating
+)
+VALUES (
+    1,
+    "The Dark Knight",
+    "2008",
+    "PG-13"
+);
+
+INSERT INTO movies (
+    studio_id,
+    title,
+    year,
+    rating
+)
+VALUES (
+    1,
+    "The Dark Knight Rises",
+    "2013",
+    "PG-13"
+);
+
+INSERT INTO roles (
+    movie_id,
+    actor_name,
+    character_name
+)
+VALUES (
+    1,
+    "Christian Bale",
+    "Bruce Wayne"
+);
+
+INSERT INTO roles (
+    movie_id,
+    actor_name,
+    character_name
+)
+VALUES (
+    1,
+    "Liam Neeson",
+    "Ra's Al Gul"
+);
+
+INSERT INTO roles (
+    movie_id,
+    actor_name,
+    character_name
+)
+VALUES (
+    1,
+    "Katie Holmes",
+    "Rachel Dawes"
+);
+
+INSERT INTO roles (
+    movie_id,
+    actor_name,
+    character_name
+)
+VALUES (
+    1,
+    "Gary Oldman",
+    "Commissioner Gordon"
+);
+
+INSERT INTO roles (
+    movie_id,
+    actor_name,
+    character_name
+)
+VALUES (
+    2,
+    "Christian Bale",
+    "Bruce Wayne"
+);
+
+INSERT INTO roles (
+    movie_id,
+    actor_name,
+    character_name
+)
+VALUES (
+    2,
+    "Heath Ledger",
+    "Joker"
+);
+
+
+
+
+
 
 -- Prints a header for the movies output
 .print "Movies"
